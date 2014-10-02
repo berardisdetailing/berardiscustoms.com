@@ -243,7 +243,7 @@ Thank you for visiting Berardi's Auto Body, your number one location in <?=$city
 		<div id="box1" class="box1">
 			<strong>Get Updates &amp; Specials </strong> <br />
 			Join Our Mailing List:<strong><form method="post" action="/send-email.ashx">
-				<input name="email" type="text" style="width: 182px" />&nbsp;
+				<input name="contact-email" type="text" style="width: 182px" />&nbsp;
 				<input name="submit" type="submit" value="Go" style="width: 34px; height: 28px" /></form>
 			Keep Up With Us </strong><br />
 			<img alt="" src="img/twitter_16.png" width="16" height="16" />&nbsp;
