@@ -34,14 +34,14 @@ public class SendEmailHandler : IHttpHandler
 			string contactEmail = context.Request.Form["contact-email"];
 
 			message.To.Add(new MailAddress(WebConfigurationManager.AppSettings["InfoEmail"], "Berardi's Detailing"));
-			message.To.Add(new MailAddress(contactEmail, contactName));
-			message.From = new MailAddress(WebConfigurationManager.AppSettings["NoReplyEmail"], "Berardi's Detailing No Reply");
+			//message.To.Add(new MailAddress(contactEmail, contactName));
+			message.From = new MailAddress(WebConfigurationManager.AppSettings["NoReplyEmail"], "Berardi's Customs No Reply");
 			message.ReplyTo = new MailAddress(contactEmail, contactName);
 
 			message.Subject = "Web Site Information Request";
 			message.IsBodyHtml = false;
 			message.Body = "sent-at:" + Environment.NewLine + DateTime.Now.ToString("F") + Environment.NewLine + Environment.NewLine;
-			message.Body += "sent-from:" + Environment.NewLine + "berardisdetailing.com" + Environment.NewLine + Environment.NewLine;
+			message.Body += "sent-from:" + Environment.NewLine + "berardiscustoms.com" + Environment.NewLine + Environment.NewLine;
 
 			foreach (string id in context.Request.Form.AllKeys)
 				message.Body += id + ":" + Environment.NewLine + context.Request.Form[id] + Environment.NewLine + Environment.NewLine;
